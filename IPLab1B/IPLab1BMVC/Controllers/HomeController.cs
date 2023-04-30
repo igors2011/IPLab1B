@@ -25,8 +25,16 @@ namespace IPLab1BMVC.Controllers
 
 		public IActionResult Fairies()
 		{
-			Fairies fairies = new();
-			ViewBag.Fairies = fairies.FairyList;
+			ViewBag.Fairies = FairiesGetter.FairyList;
+			return View();
+		}
+
+		public IActionResult Fairy(string id)
+		{
+			ViewBag.Name = id;
+			var fairy = FairiesGetter.FairyList.Find(x => x.Name == id);
+			ViewBag.Description = fairy?.Description ?? string.Empty;
+			ViewBag.Image = fairy?.ImageSrc ?? string.Empty;
 			return View();
 		}
 

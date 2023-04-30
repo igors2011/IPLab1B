@@ -1,8 +1,8 @@
 ﻿namespace IPLab1BMVC.Models
 {
-	public class Fairies
+	public static class FairiesGetter
 	{
-		public List<Fairy> FairyList
+		public static List<Fairy> FairyList
 		{
 			get
 			{
