@@ -1,0 +1,69 @@
+@media (max-width: 1020px) {
+
+  html,
+  body {
+    min-width: 100%;
+    width: 100%;
+  }
+
+  nav {
+    position: sticky;
+    margin-top: 0%;
+    margin-bottom: 0%;
+    float: none;
+    width: 100%;
+    height: auto;
+    text-align: center;
+  }
+
+  h1 {
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  .header {
+    border: 5px solid #ff2e9f;
+  }
+
+  main {
+    width: 100%;
+    height: auto;
+  }
+
+  .logo-wrapper {
+    display: none;
+  }
+
+  .mobile-logo {
+    display: block;
+  }
+
+  main,
+  .page-wrapper,
+  .strength-wrapper,
+  .comment-wrapper {
+    padding: 15px;
+  }
+
+  .page-wrapper>.content {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .strength-wrapper {
+    overflow: scroll;
+  }
+
+  .comment-wrapper .content {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .comment-wrapper .column {
+    gap: 10px;
+  }
+
+  .comment-wrapper button {
+    min-width: 100%;
+  }
+}

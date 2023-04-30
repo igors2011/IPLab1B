@@ -23,6 +23,13 @@ namespace IPLab1BMVC.Controllers
 			return View();
 		}
 
+		public IActionResult Fairies()
+		{
+			Fairies fairies = new();
+			ViewBag.Fairies = fairies.FairyList;
+			return View();
+		}
+
 		[ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
 		public IActionResult Error()
 		{

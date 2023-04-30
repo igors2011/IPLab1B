@@ -1,0 +1,216 @@
+*,
+::after,
+::before {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    padding: 0;
+    margin: 0;
+    min-width: 1020px;
+    font-size: 24px;
+    font-family: "Inter";
+    background-color: #ff2e9f;
+    scroll-behavior: smooth;
+}
+
+
+nav {
+    display: block;
+    position: fixed;
+    float: left;
+    width: 25%;
+    height: 100%;
+    background-color: #fff;
+}
+
+.mobile-logo {
+    display: none;
+}
+
+main {
+    display: block;
+    float: right;
+    width: 75%;
+    background-color: #ff2e9f;
+}
+
+.logo-wrapper {
+    position: fixed;
+    float:right;
+    width: 75%;
+    background-color: #fff;
+}
+
+.header {
+    text-align: center;
+    font-size: 64px;
+    color: #ff2e9f;
+    margin-top: 10px;
+    height: 115px;
+    border-right: 5px solid #ff2e9f;
+    border-bottom: 5px solid #ff2e9f;
+}
+
+nav .links {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+    font-size: 54px;
+    color: #ff2e9f;
+    min-height: 50px;
+    text-decoration: none;
+}
+
+.page-wrapper {
+    margin-top: 55px;
+}
+
+.page-wrapper,
+.strength-wrapper,
+.comment-wrapper {
+    padding: 20px 0;
+}
+
+    .page-wrapper > .content {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+    }
+
+.content {
+    padding: 10px;
+    margin: 0 auto;
+}
+
+h1 {
+    font-family: "Inter";
+    font-size: 64px;
+    color: #ff2e9f;
+    font-weight: 100;
+    padding: 20px;
+    margin-right: 200px;
+    margin-left: 200px;
+    min-width: 300px;
+    display: block;
+    background-color: #ffffffae;
+    text-align: center;
+}
+
+nav .links a {
+    color: #ff2e9f;
+    text-decoration: none;
+}
+
+.fairies-text, .fairies-logo {
+    font-size: 64px;
+    color: #fff;
+    text-align: center;
+}
+
+table {
+    font-size: 54px;
+    color: #ff2e9f;
+}
+
+.table-responsive {
+    overflow-x: auto;
+}
+
+.strength-wrapper table {
+    width: 100%;
+    border-spacing: 0;
+    background-color: #ffffffac;
+}
+
+    .strength-wrapper table thead {
+        background-color: #ffffffac;
+    }
+
+    .strength-wrapper table td,
+    .strength-wrapper table th {
+        padding: 5px;
+    }
+
+th, td {
+    border: 5px solid #ff2e9f;
+}
+
+.strength-wrapper table tbody tr {
+    background-color: #ffffffac;
+}
+
+.strength-wrapper {
+    text-align: center;
+    white-space: nowrap;
+}
+
+.comment-wrapper button {
+    background-color: #b1a2a2d1;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+    color: #fff;
+    padding: 10px;
+    font-size: 64px;
+    font-weight: bold;
+    margin: 30px auto;
+    min-width: 500px;
+    display: block;
+    cursor: pointer;
+    border: none;
+    text-align: center;
+}
+
+    .comment-wrapper button:hover {
+        background-color: #edf8fa;
+        color: #b1a2a2d1;
+    }
+
+.comment-wrapper .content {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.comment-wrapper input,
+.comment-wrapper textarea {
+    display: block;
+    width: 100%;
+    border-style: none;
+    margin: 0;
+    padding: 5px;
+    background-color: #ffffffdd;
+    box-shadow: #000 0 0 2px;
+}
+
+    .comment-wrapper input:focus,
+    .comment-wrapper textarea:focus {
+        outline-width: 1px;
+        outline-color: #ada093;
+    }
+
+.comment-wrapper textarea {
+    flex-grow: 1;
+}
+
+.input-label {
+    font-weight: bold;
+    font-size: 64px;
+    color: #fff;
+}
+
+.information {
+    font-weight: bold;
+    font-size: 64px;
+    color: #ffffffae;
+    padding: 20px;
+    text-align: center;
+}
+.fairies-description {
+    font-weight: bold;
+    font-size: 32px;
+    color: #ffffffae;
+    padding: 20px;
+    text-align: center;
+}
