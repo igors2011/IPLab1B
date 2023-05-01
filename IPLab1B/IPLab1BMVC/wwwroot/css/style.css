@@ -58,6 +58,7 @@ nav .links {
     flex-direction: column;
     gap: 20px;
     align-items: center;
+    text-align: center;
     font-size: 54px;
     color: #ff2e9f;
     min-height: 50px;

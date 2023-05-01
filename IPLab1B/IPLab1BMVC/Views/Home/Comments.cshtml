@@ -1,0 +1,13 @@
+﻿@{
+	ViewData["Title"] = "Комментарии";
+}
+
+<h1>Комментарии</h1>
+
+@foreach (var comment in ViewBag.Comments)
+{
+<div>
+	<div>@comment.SenderName</div>
+	<div>@comment.CommentValue</div>
+</div>
+}

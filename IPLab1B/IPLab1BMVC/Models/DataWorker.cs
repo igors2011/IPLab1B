@@ -49,5 +49,12 @@
 				return result;
 			}
 		}
+		public static void AddComment(Comment comment)
+		{
+			using (StreamWriter sw = new("TextData/comments.txt", true))
+			{
+				sw.WriteLine(comment.SenderName + ";" + comment.CommentValue);
+			}
+		}
 	}
 }
