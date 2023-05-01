@@ -6,8 +6,8 @@
 
 @foreach (var comment in ViewBag.Comments)
 {
-<div>
-	<div>@comment.SenderName</div>
-	<div>@comment.CommentValue</div>
+<div class="comment-wrapper">
+	<h2>@comment.SenderName</h2>
+	<h3>@comment.CommentValue</h3>
 </div>
 }
