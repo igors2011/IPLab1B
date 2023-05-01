@@ -12,27 +12,22 @@ namespace IPLab1BMVC.Controllers
 		{
 			_logger = logger;
 		}
-
+		[HttpGet]
 		public IActionResult Index()
 		{
 			return View();
 		}
-
-		public IActionResult Privacy()
-		{
-			return View();
-		}
-
+		[HttpGet]
 		public IActionResult Fairies()
 		{
-			ViewBag.Fairies = FairiesGetter.FairyList;
+			ViewBag.Fairies = DataWorker.FairyList;
 			return View();
 		}
-
+		[HttpGet]
 		public IActionResult Fairy(string id)
 		{
 			ViewBag.Name = id;
-			var fairy = FairiesGetter.FairyList.Find(x => x.Name == id);
+			var fairy = DataWorker.FairyList.FirstOrDefault(x => x.Name == id);
 			ViewBag.Description = fairy?.Description ?? string.Empty;
 			ViewBag.Image = fairy?.ImageSrc ?? string.Empty;
 			return View();
