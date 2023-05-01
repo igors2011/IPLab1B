@@ -2,17 +2,15 @@
 	ViewData["Title"] = "Феи";
 }
 
-<div class="page-wrapper">
-	<div class="content">
-		@foreach (var fairy in ViewBag.Fairies)
-		{
-			<div>
-				<div class="fairies-logo">
-					<img src="@fairy.ImageSrc" />
-				</div>
-				<a class="fairies-text" href="/Home/Fairy/@fairy.Name">@fairy.Name</a>
-				<div class="fairies-description">@fairy.Description</div>
+<div class="content">
+	@foreach (var fairy in ViewBag.Fairies)
+	{
+		<div>
+			<div class="fairies-logo">
+				<img src="@fairy.ImageSrc" />
 			</div>
-		}
-	</div>
+			<center><a class="fairies-text" href="/Home/Fairy/@fairy.Name">@fairy.Name</a></center>
+			<div class="fairies-description">@fairy.Description</div>
+		</div>
+	}
 </div>

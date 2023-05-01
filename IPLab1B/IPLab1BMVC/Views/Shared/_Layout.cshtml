@@ -9,6 +9,8 @@
     <link rel="stylesheet" href="~/IPLab1BMVC.styles.css" asp-append-version="true" />*@
     <link rel="stylesheet" href="~/css/style.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/css/style-mobile.css" asp-append-version="true" />
+    <link href="~/img/favicon.ico" rel="shortcut icon" runat="server" type="image/x-icon" />
+    <link href="~/img/favicon.ico" rel="icon" runat="server" type="image/ico" />
 </head>
 <body>
     <header>
@@ -26,7 +28,9 @@
                 <center><img src="~/img/logo.png"></center>
             </a>
             <div class="page-wrapper">
-                @RenderBody()
+                <div class="page-wrapper">
+                    @RenderBody()
+                </div>
             </div>
         </main>
     </div>
