@@ -2,22 +2,23 @@
 {
 	public static class DataWorker
 	{
-		public static List<Fairy> FairyList
+		public static List<Character> FairyList
 		{
 			get
 			{
-				var result = new List<Fairy>();
+				var result = new List<Character>();
 				using (StreamReader sr = new("TextData/fairies.txt"))
 				{
 					var currentString = sr.ReadLine();
 					while (currentString != null)
 					{
 						var fairyData = currentString.Split(';');
-						var newFairy = new Fairy()
+						var newFairy = new Character()
 						{
 							Name = fairyData[0],
-							Description = fairyData[1],
-							ImageSrc = fairyData[2]
+							ShortDescription = fairyData[1],
+							LongDescription = fairyData[2],
+							ImageSrc = fairyData[3]
 						};
 						result.Add(newFairy);
 						currentString = sr.ReadLine();

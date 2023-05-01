@@ -111,6 +111,7 @@ h2 {
     display: block;
     background-color: #ffffffae;
     text-align: center;
+    border: 2px solid #ff2e9f;
 }
 h3 {
     font-family: "Inter";
@@ -123,6 +124,7 @@ h3 {
     display: block;
     background-color: #ffffffae;
     text-align: center;
+    border: 2px solid #ff2e9f;
 }
 
 nav .links a {
