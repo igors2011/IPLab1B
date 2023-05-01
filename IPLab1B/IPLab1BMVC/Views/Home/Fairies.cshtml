@@ -14,3 +14,27 @@
 		</div>
 	}
 </div>
+<div class="strength-wrapper">
+	<a id="strength"></a>
+	<div class="content">
+		<table>
+			<thead>
+				<tr>
+					<th>Фея</th>
+					<th>Происхождение</th>
+					<th>Силы</th>
+				</tr>
+			</thead>
+			<tbody>
+				@foreach (var fairy in ViewBag.Fairies)
+				{
+					<tr>
+						<td>@fairy.Name</td>
+						<td>@fairy.Origin</td>
+						<td>@fairy.MagicPower</td>
+					</tr>
+				}
+			</tbody>
+		</table>
+	</div>
+</div>

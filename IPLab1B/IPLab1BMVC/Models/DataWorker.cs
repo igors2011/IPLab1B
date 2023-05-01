@@ -18,7 +18,9 @@
 							Name = fairyData[0],
 							ShortDescription = fairyData[1],
 							LongDescription = fairyData[2],
-							ImageSrc = fairyData[3]
+							Origin = fairyData[3],
+							MagicPower = fairyData[4],
+							ImageSrc = fairyData[5]
 						};
 						result.Add(newFairy);
 						currentString = sr.ReadLine();
