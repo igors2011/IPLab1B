@@ -28,7 +28,6 @@ namespace IPLab1BMVC.Controllers
 		{
 			ViewBag.Name = id;
 			var fairy = DataWorker.FairyList.FirstOrDefault(x => x.Name == id);
-			ViewBag.ShortDescription = fairy?.ShortDescription ?? string.Empty;
 			ViewBag.LongDescription = fairy?.LongDescription ?? string.Empty;
 			ViewBag.Image = fairy?.ImageSrc ?? string.Empty;
 			return View();
