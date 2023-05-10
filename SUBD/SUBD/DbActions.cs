@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using SUBD.Models;
+using System.Diagnostics;
 
 namespace SUBD
 {
@@ -45,6 +46,10 @@ namespace SUBD
 		{
 			using var context = new Context();
 			var result = context.Stores.ToList();
+			if (result.Count == 0 ) 
+			{
+				Console.WriteLine("Магазинов нет");
+			}
 			foreach (var store in result)
 			{
 				Console.WriteLine($"{store.Id}. Название: {store.Name} Адрес: {store.Address}");
@@ -156,6 +161,73 @@ namespace SUBD
 			context.Stores.Remove(Store);
 			context.SaveChanges();
 			Console.WriteLine("Магазин удален");
+		}
+		private double DemInsert()
+		{
+			Stopwatch stopwatch = new();
+			//вставим 10 магазинов и замерим время
+			stopwatch.Start();
+			using var context = new Context();
+			for (int i = 0; i < 1000; i++)
+			{
+				context.Stores.Add(new() { Name = $"Магазин {i}", Address = $"Адрес магазина {i}" });
+			}
+			context.SaveChanges();
+			stopwatch.Stop();
+			return stopwatch.ElapsedMilliseconds;
+		}
+		private double DemUpdate()
+		{
+			Stopwatch stopwatch = new();
+			using var context = new Context();
+			//обновим 10 магазинов и замерим время
+			var stores = context.Stores.ToList();
+			foreach (var store in stores)
+			{
+				store.Name = "kkkkk";
+			}
+			stopwatch.Start();
+			context.Stores.UpdateRange(stores);
+			context.SaveChanges();
+			stopwatch.Stop();
+			return stopwatch.ElapsedMilliseconds;
+		}
+		private double DemDelete()
+		{
+			Stopwatch stopwatch = new();
+			using var context = new Context();
+			//удалим 10 магазинов и замерим время
+			var stores = context.Stores.ToList();
+			stopwatch.Start();
+			context.Stores.RemoveRange(stores);
+			context.SaveChanges();
+			stopwatch.Stop();
+			return stopwatch.ElapsedMilliseconds;
+		}
+		private double DemRead()
+		{
+			Stopwatch stopwatch = new();
+			using var context = new Context();
+			//считаем 10 магазинов и замерим время
+			stopwatch.Start();
+			var stores = context.Stores.ToList();
+			stopwatch.Stop();
+			return stopwatch.ElapsedMilliseconds;
+		}
+		public void TestTime()
+		{
+			//удаляем все магазины
+			using var context = new Context();
+			context.Stores.RemoveRange(context.Stores);
+			context.SaveChanges();
+			double C = DemInsert();
+			double R = DemRead();
+			double U = DemUpdate();
+			double D = DemDelete();
+			Console.WriteLine($"Вставка {C}");
+			Console.WriteLine($"Обновление {U}");
+			Console.WriteLine($"Чтение {R}");
+			Console.WriteLine($"Удаление {D}");
 		}
 	}
 }

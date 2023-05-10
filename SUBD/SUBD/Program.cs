@@ -45,6 +45,9 @@
 					case "Удалить магазин":
 						actions.DeleteStore();
 						break;
+					case "Тест":
+						actions.TestTime();
+						break;
 					default:
 						Console.WriteLine("Неверный ввод");
 						break;
