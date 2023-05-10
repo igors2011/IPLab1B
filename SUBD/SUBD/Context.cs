@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using SUBD.Models;
 
 namespace SUBD
 {
@@ -13,8 +14,10 @@ namespace SUBD
 		{
 		}
 
-		public virtual DbSet<Author> Authors { get; set; }
+		public virtual DbSet<Product> Products { get; set; }
+		public virtual DbSet<ProductInStore> ProductsInStore { get; set; }
+		public virtual DbSet<Store>	Stores { get; set; }
 
-		protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder) => optionsBuilder.UseNpgsql("Host=192.168.56.103;Port=5432;Database=news;Username=postgres;Password=54050");
+		protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder) => optionsBuilder.UseNpgsql("Host=192.168.56.101;Port=5432;Database=subdabs;Username=postgres;Password=1");
 	}
 }
